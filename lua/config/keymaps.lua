@@ -17,3 +17,11 @@ map("n", "N", "10k", { desc = "move up 10 line", noremap = true })
 
 map("n", "<C-p>", "<leader>ff", { desc = "code action" })
 map("n", "<C-.>", "<leader>ca", { desc = "code action" })
+
+--unbind Move Lines key
+map("n", "<A-j>", "", { desc = "cancel move down" })
+map("n", "<A-k>", "", { desc = "cancel move up" })
+map("i", "<A-j>", "", { desc = "cancel move down" })
+map("i", "<A-k>", "", { desc = "cancel move up" })
+map("v", "<A-k>", "", { desc = "cancel move up" })
+map("v", "<A-j>", "", { desc = "cancel move down" })
