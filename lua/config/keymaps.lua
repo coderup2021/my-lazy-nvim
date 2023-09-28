@@ -15,8 +15,9 @@ map("n", "=", "n", { desc = "backward search", noremap = true })
 map("n", "n", "10j", { desc = "move down 10 line", noremap = true })
 map("n", "N", "10k", { desc = "move up 10 line", noremap = true })
 
-map("n", "<C-p>", "<leader>ff", { desc = "code action" })
+map("n", "<C-p>", "<leader>ff", { desc = "search file" })
 map("n", "<C-.>", "<leader>ca", { desc = "code action" })
+map("n", "<leader>p", "<leader>fb", { desc = "search buffer file" })
 
 --unbind Move Lines key
 map("n", "<A-j>", "", { desc = "cancel move down" })
