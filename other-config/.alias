@@ -1,0 +1,60 @@
+alias ..="cd .."
+alias ...="cd ../.."
+alias .3="cd ../../.."
+alias ~="cd ~"
+
+alias psg='\ps aux | grep -v grep | grep --color' # 查看进程信息
+alias hg='history|grep'
+alias netp='netstat -tulanp'  # 查看服务器端口连接信息
+alias ntpl='netstat -ntpl'  # 查看服务器端口连接信息
+alias k9='kill -9';# 快速根据进程号pid杀死进程，如 psid tomcat， 然后 kill9 两个tab键提示要kill的进程号
+alias nocomm='grep -Ev '\''^(#|$)'\'''      # 查看去掉#注释和空行的配置文件，如 nocomm /etc/squid/squid.conf
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias gl='git log --oneline -10'
+alias gl20='git log --oneline -20'
+alias gl30='git log --oneline -30'
+alias gl40='git log --oneline -50'
+alias gl50='git log --oneline -50'
+alias gl100='git log --oneline -100'
+alias gs='git status'
+alias gsu='git status --untracked-files=no'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gba='git branch -avv'
+alias gadd='git add'
+alias gcheck='git checkout'
+alias gcommit='git commit'
+alias gpick='git cherry-pick'
+alias gpull='git pull'
+alias gpush='git push'
+alias grep='grep --color=auto'
+alias greset='git reset'
+alias gshow='git show'
+alias gshow1='git show --stat'
+
+alias rmcode='find . -maxdepth 1 ! -name .git ! -name tags -exec rm -rf {} +'
+alias resetcode='git reset HEAD --hard'
+
+
+# 自动在文件末尾加上 .bak-日期 来备份文件，如 bu nginx.conf
+bak() { cp "$@" "$@.bak"-`date +%y%m%d`; echo "`date +%Y-%m-%d` backed up $PWD/$@"; }
+
+# 级联创建目录并进入，如 mcd a/b/c
+mcd() { mkdir -p $1 && cd $1 && pwd ; }
+
+function proxy(){
+    export HTTP_PROXY=127.0.0.1:8080
+    export HTTPS_PROXY=127.0.0.1:8080
+    export https_proxy=127.0.0.1:8080
+    export http_proxy=127.0.0.1:8080
+}
+
+function unproxy(){
+    export HTTP_PROXY=""
+    export HTTPS_PROXY=""
+    export https_proxy=""
+    export http_proxy=""
+}
