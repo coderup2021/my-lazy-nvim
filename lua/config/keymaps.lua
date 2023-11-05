@@ -9,13 +9,10 @@ map("i", "jj", "<esc>", { desc = "esc key" })
 map("i", "<tab>", ">>", { desc = "input tab" })
 map("n", "<tab>", ">>", { desc = "input tab" })
 
---map("n", "-", "N", { desc = "backward search", noremap = true })
---map("n", "=", "n", { desc = "backward search", noremap = true })
-
 map("n", "=", "10j", { desc = "move down 10 line", noremap = true })
 map("n", "-", "10k", { desc = "move up 10 line", noremap = true })
-
-map("n", "<C-.>", "<leader>ca", { desc = "code action" })
+map("n", "<leader>l", "$", { desc = "move to tail" })
+map("n", "<leader>h", "^", { desc = "move to head" })
 
 --unbind Move Lines key
 map("n", "<A-j>", "", { desc = "cancel move down" })
