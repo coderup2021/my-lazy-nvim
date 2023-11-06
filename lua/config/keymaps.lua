@@ -34,3 +34,7 @@ vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc
 vim.keymap.set("n", "<leader>st", require("telescope.builtin").tags, { desc = "search tags" })
 vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "search diagnostics" })
 vim.keymap.set("n", "<leader>s<space>", require("telescope.builtin").search_history, { desc = "search history" })
+
+vim.keymap.set("n", "<leader>p", function()
+  require("logsitter").log()
+end, { desc = "quick debug, printf current var" })
