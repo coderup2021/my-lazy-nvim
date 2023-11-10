@@ -13,7 +13,7 @@ map("n", "=", "10j", { desc = "move down 10 line", noremap = true })
 map("n", "-", "10k", { desc = "move up 10 line", noremap = true })
 map("n", "<leader>l", "$", { desc = "move to tail" })
 map("n", "<leader>h", "^", { desc = "move to head" })
-map("n", "<leader>r", ":source ~/.config/nvim/init.lua<cr>", { desc = "reload lua config"})
+map("n", "<leader>r", ":source ~/.config/nvim/init.lua<cr>", { desc = "reload lua config" })
 
 --unbind Move Lines key
 map("n", "<A-j>", "", { desc = "cancel move down" })
@@ -36,6 +36,6 @@ vim.keymap.set("n", "<leader>st", require("telescope.builtin").tags, { desc = "s
 vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "search diagnostics" })
 vim.keymap.set("n", "<leader>s<space>", require("telescope.builtin").search_history, { desc = "search history" })
 
-vim.keymap.set("n", "<leader>p", function()
+vim.keymap.set("n", "<leader>a", function()
   require("logsitter").log()
 end, { desc = "quick debug, printf current var" })
