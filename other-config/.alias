@@ -38,6 +38,10 @@ alias gshow1='git show --stat'
 alias rmcode='find . -maxdepth 1 ! -name .git ! -name tags -exec rm -rf {} +'
 alias resetcode='git reset HEAD --hard'
 
+alias ssh138='ssh ubuntu@138.3.210.212'
+alias ssh47='ssh lj@47.109.44.160'
+alias ta='tmux attach'
+
 
 # 自动在文件末尾加上 .bak-日期 来备份文件，如 bu nginx.conf
 bak() { cp "$@" "$@.bak"-`date +%y%m%d`; echo "`date +%Y-%m-%d` backed up $PWD/$@"; }
