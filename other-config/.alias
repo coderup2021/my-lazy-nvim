@@ -50,6 +50,7 @@ bak() { cp "$@" "$@.bak"-`date +%y%m%d`; echo "`date +%Y-%m-%d` backed up $PWD/$
 mcd() { mkdir -p $1 && cd $1 && pwd ; }
 
 function proxy(){
+    ssh -N -D 1080 ubuntu@138.3.210.212 &
     export HTTP_PROXY=127.0.0.1:8080
     export HTTPS_PROXY=127.0.0.1:8080
     export https_proxy=127.0.0.1:8080
@@ -57,6 +58,15 @@ function proxy(){
 }
 
 function unproxy(){
+    cmd="ps aux | grep 'ssh -N -D 1080' | grep -v 'grep --color=auto ssh -N -D 1080' | awk -F ' ' '{print \$2}'"
+    echo $cmd
+    tport=$(eval $cmd)
+    if expr "$tport" : '^[0-9]\+$' > /dev/null;  then
+    echo "tport=$tport"
+        cmd="kill -9 $tport"
+        echo $cmd
+        eval $cmd
+    fi
     export HTTP_PROXY=""
     export HTTPS_PROXY=""
     export https_proxy=""
