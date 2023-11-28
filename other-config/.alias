@@ -39,7 +39,8 @@ alias rmcode='find . -maxdepth 1 ! -name .git ! -name tags -exec rm -rf {} +'
 alias resetcode='git reset HEAD --hard'
 
 alias ssh138='ssh ubuntu@138.3.210.212'
-alias ssh47='ssh lj@47.109.44.160'
+alias sshali='ssh lj@47.109.44.160'
+alias sshhk='ssh lj@43.198.76.96'
 alias ta='tmux attach'
 
 
