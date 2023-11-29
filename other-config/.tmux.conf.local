@@ -5,6 +5,7 @@
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 # ------Add by lj start-----------------------------------------------------------------------
 set -g mouse on
+#bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xsel -i --clipboard"
 # ------Add by lj end-----------------------------------------------------------------------
 
 # -- session creation ----------------------------------------------------------
@@ -363,11 +364,11 @@ tmux_conf_copy_to_os_clipboard=false
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
 #set -g status-keys vi
-#set -g mode-keys vi
+set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
-# unbind C-a
+set -gu prefix2
+unbind C-a
 # unbind C-b
 # set -g prefix C-a
 # bind C-a send-prefix
